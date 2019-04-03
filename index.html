@@ -1,85 +1,38 @@
-<!DOCTYPE html>
-<html>
-
+<html lang=”en”>
 <head>
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- title -->
+    <title>Cook for the King</title>
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <!-- Link to your main style sheet-->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+
 </head>
-   
-<style>
-        h1 {
-            position: absolute;
-            z-index: 10;
-            left: 20%;
-            bottom: 5%;
-            background-color: #fafafa;
-            border: solid;
-            padding: 10px 15px;
-            border-radius: 70px;
-            filter: drop-shadow(8px 10px 5px rgba(0, 0, 0, 0.50));
-        }
-</style>
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112746340-3"></script>
+<body>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112746340-3"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-112746340-3');
-</script>
+<section class="content">
+<div class="main">
+  <img id="mainlogo" src="logo.svg"/>
+  <h3>Cooking for Dongledorf</h3>
+  <p class="tagline">
+    Find and scan the AR markers that are hidden around campus.<br/> Turn your Volume on to hear what Dongletown's citizens have to say.
+  </p>
+  <a class="homebtn" href="ar.html"> Scan Marker</a>
+</div>
 
-
-<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
-<script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    
-<body style='margin : 0px; overflow: hidden;'>
-
- 
-
-    <a-scene arjs="debugUIEnabled: false;" embedded arjs='trackingMethod: best;'>
-        
-        <a-assets>
-            <a-asset-item id="asset1" src="https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Models/QueenDongledorf.gltf"></a-asset-item>
-            <a-asset-item id="asset2" src="Models/Farmerdorf.gltf"></a-asset-item>
-            <a-asset-item id="asset3" src="Models/Driverdorf.gltf"></a-asset-item>
-            <a-asset-item id="asset4" src="Models/Chefdorf.gltf"></a-asset-item>
-            <a-asset-item id="asset5" src="Models/Butlerdorf.gltf"></a-asset-item>
-        </a-assets>
-        
-        <a-marker type='pattern' patternUrl='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/queen.patt'>
-         <!--   type='pattern' patternUrl='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/pattern-marker.patt'-->
-        <!--<a-gltf-model src="Models/QueenDongledorfblend.gltf"></a-gltf-model>
-        <a-marker-camera patternUrl='https://aidanphilpott.github.io/DongleAR/Marker/pattern-marker.patt'></a-marker-camera>-->
-            <a-entity 
-                gltf-model="#asset1"
-                scale= '.5 .5 .5' position='0, 0, -1.75'rotation='-90, 0, 0'>
-            </a-entity>
-            
-          
-
-
-        <a-camera-static/>
-        </a-marker>
-        <a-entity camera></a-entity>
-        
-    <h1 onclick="changeText(this)">King Dongledorf is evil!</h1>
-    <script>
-        function changeText(id) {
-            id.innerHTML = "He hates pickles though, maybe they aren't so bad.";
-        }
-    </script>
-        
-    </a-scene>
-
-
+</section>
 
 
 </body>
 </html>
-
-
