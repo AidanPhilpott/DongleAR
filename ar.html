@@ -6,20 +6,6 @@
     <title>Cook for the King</title>
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
 </head>
-   
-<style>
-        h1 {
-            position: absolute;
-            z-index: 10;
-            left: 20%;
-            bottom: 5%;
-            background-color: #fafafa;
-            border: solid;
-            padding: 10px 15px;
-            border-radius: 70px;
-            filter: drop-shadow(8px 10px 5px rgba(0, 0, 0, 0.50));
-        }
-</style>
     
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112746340-3"></script>
 
@@ -45,38 +31,56 @@
 
     <a-scene arjs="debugUIEnabled: false;" embedded arjs='trackingMethod: best;'>
         <a-assets>
-            <a-asset-item id="asset1" src="https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Models/QueenDongledorf.gltf"></a-asset-item>
-            <a-asset-item id="asset2" src="Models/Farmerdorf.gltf"></a-asset-item>
-            <a-asset-item id="asset3" src="Models/Driverdorf.gltf"></a-asset-item>
-            <a-asset-item id="asset4" src="Models/Chefdorf.gltf"></a-asset-item>
-            <a-asset-item id="asset5" src="Models/Butlerdorf.gltf"></a-asset-item>
+            <a-asset-item id="queen" src="https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Models/QueenDongledorf.gltf"></a-asset-item>
+            <a-asset-item id="farmer" src="https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Models/Farmerdorf.gltf"></a-asset-item>
+            <a-asset-item id="driver" src="https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Models/Driverdorf.gltf"></a-asset-item>
+            <a-asset-item id="chef" src="https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Models/Chefdorf.gltf"></a-asset-item>
+            <a-asset-item id="butler" src="https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Models/Butlerdorf.gltf"></a-asset-item>
         </a-assets>
         
         <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/queen.patt'>
             <a-entity 
-                gltf-model="#asset1"
+                gltf-model="#queen"
                 scale= '.5 .5 .5' position='0, 0, -1.75'rotation='-90, 0, 0'>
+            </a-entity>
+        <a-camera-static/>
+        </a-marker>
+        
+         <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/driver.patt'>
+            <a-entity 
+                gltf-model="#driver"
+                scale= '.2 .2 .2' position='0, 0, -1'rotation='-90, 0, 0'>
+            </a-entity>
+        <a-camera-static/>
+        </a-marker>
+        
+         <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/gardener.patt'>
+            <a-entity 
+                gltf-model="#farmer"
+                scale= '.2 .2 .2' position='0, 0, -1'rotation='-90, 0, 0'>
+            </a-entity>
+        <a-camera-static/>
+        </a-marker>
+        
+         <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/butler.patt'>
+            <a-entity 
+                gltf-model="#butler"
+                scale= '.2 .2 .2' position='0, 0, -1'rotation='-90, 0, 0'>
             </a-entity>
         <a-camera-static/>
         </a-marker>
         
          <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/chef.patt'>
             <a-entity 
-                gltf-model="#asset4"
-                scale= '.5 .5 .5' position='0, 0, -1.75'rotation='-90, 0, 0'>
+                gltf-model="#chef"
+                scale= '.2 .2 .2' position='0, 0, -1'rotation='-90, 0, 0'>
             </a-entity>
         <a-camera-static/>
         </a-marker>
-        
+
         
         <a-entity camera></a-entity>
         
-    <h1 onclick="changeText(this)">King Dongledorf is evil!</h1>
-    <script>
-        function changeText(id) {
-            id.innerHTML = "He hates pickles though, maybe they aren't so bad.";
-        }
-    </script>
         
     </a-scene>
 
