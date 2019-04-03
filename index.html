@@ -10,10 +10,11 @@
             position: absolute;
             z-index: 10;
             left: 20%;
+            bottom: 5%;
             background-color: #fafafa;
             border: solid;
-            padding: 10 15px;
-            border-radius: 25px;
+            padding: 10px 15px;
+            border-radius: 70px;
             filter: drop-shadow(8px 10px 5px rgba(0, 0, 0, 0.50));
         }
 </style>
@@ -43,20 +44,20 @@
     <a-scene arjs="debugUIEnabled: false;" embedded arjs='trackingMethod: best;'>
         
         <a-assets>
-            <a-asset-item id="asset1" src="https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Models/QueenDongledorfblend.gltf"></a-asset-item>
+            <a-asset-item id="asset1" src="https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Models/QueenDongledorf.gltf"></a-asset-item>
             <a-asset-item id="asset2" src="Models/Farmerdorf.gltf"></a-asset-item>
             <a-asset-item id="asset3" src="Models/Driverdorf.gltf"></a-asset-item>
             <a-asset-item id="asset4" src="Models/Chefdorf.gltf"></a-asset-item>
             <a-asset-item id="asset5" src="Models/Butlerdorf.gltf"></a-asset-item>
         </a-assets>
         
-        <a-marker id="animated-marker" preset='hiro'>
+        <a-marker type='pattern' patternUrl='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/queen.patt'>
          <!--   type='pattern' patternUrl='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/pattern-marker.patt'-->
         <!--<a-gltf-model src="Models/QueenDongledorfblend.gltf"></a-gltf-model>
         <a-marker-camera patternUrl='https://aidanphilpott.github.io/DongleAR/Marker/pattern-marker.patt'></a-marker-camera>-->
             <a-entity 
                 gltf-model="#asset1"
-                scale= '.5 .5 .5' position='0, 0, -2'rotation='-90, 0, 0'>
+                scale= '.5 .5 .5' position='0, 0, -1.75'rotation='-90, 0, 0'>
             </a-entity>
             
           
