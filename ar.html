@@ -36,44 +36,63 @@
             <a-asset-item id="driver" src="https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Models/Driverdorf.gltf"></a-asset-item>
             <a-asset-item id="chef" src="https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Models/Chefdorf.gltf"></a-asset-item>
             <a-asset-item id="butler" src="https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Models/Butlerdorf.gltf"></a-asset-item>
+        
+           <!-- <a-assets><audio id="sound1" src="Audio/Driver.mp3" preload="auto"></audio>
+            </a-assets>
+            <a-assets><audio id="sound1" src="Audio/Driver.mp3" preload="auto"></audio>
+            </a-assets>
+            <a-assets><audio id="sound2" src="Audio/Gardener.mp3" preload="auto"></audio>
+            </a-assets>
+            <a-assets><audio id="sound3" src="Audio/Butler.mp3" preload="auto"></audio>
+            </a-assets>
+            <a-assets><audio id="sound4" src="Audio/Chef.mp3" preload="auto"></audio>
+            </a-assets>-->
+            
+            <audio id="sound" src="Audio/Queen.mp3" preload="auto"></audio>
+            <audio id="sound1" src="Audio/Driver.mp3" preload="auto"></audio>
+            <audio id="sound2" src="Audio/Gardener.mp3" preload="auto"></audio>
+            <audio id="sound3" src="Audio/Butler.mp3" preload="auto"></audio>
+            <audio id="sound4" src="Audio/Chef.mp3" preload="auto"></audio>
+   
+
         </a-assets>
         
-        <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/queen.patt'>
+        <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="mqueen" preset='custom' type='pattern' url='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/queen.patt'>
             <a-entity 
                 gltf-model="#queen"
-                scale= '.5 .5 .5' position='0, 0, -1.75'rotation='-90, 0, 0'>
+                scale= '.5 .5 .5' position='0, 0, -1.75'rotation='-90, 0, 0' sound="src: #sound" autoplay="true">
             </a-entity>
         <a-camera-static/>
         </a-marker>
         
-         <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/driver.patt'>
+         <a-marker markerhandler1 emitevents="true" cursor="rayOrigin: mouse" id="mdriver" preset='custom' type='pattern' url='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/driver.patt'>
             <a-entity 
                 gltf-model="#driver"
-                scale= '.2 .2 .2' position='0, 0, -1'rotation='-90, 0, 0'>
+                scale= '.2 .2 .2' position='0, 0, -1'rotation='-90, 0, 0' sound="src: #sound1" autoplay="true">>
             </a-entity>
         <a-camera-static/>
         </a-marker>
         
-         <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/gardener.patt'>
+         <a-marker markerhandler2 emitevents="true" cursor="rayOrigin: mouse" id="mfarmer" preset='custom' type='pattern' url='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/gardener.patt'>
             <a-entity 
                 gltf-model="#farmer"
-                scale= '.2 .2 .2' position='0, 0, -1'rotation='-90, 0, 0'>
+                scale= '.2 .2 .2' position='0, 0, -1'rotation='-90, 0, 0' sound="src: #sound2" autoplay="false">
             </a-entity>
         <a-camera-static/>
         </a-marker>
         
-         <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/butler.patt'>
+         <a-marker markerhandler3 emitevents="true" cursor="rayOrigin: mouse" id="mbutler" preset='custom' type='pattern' url='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/butler.patt'>
             <a-entity 
                 gltf-model="#butler"
-                scale= '.2 .2 .2' position='0, 0, -1'rotation='-90, 0, 0'>
+                scale= '.2 .2 .2' position='0, 0, -1'rotation='-90, 0, 0' sound="src: #sound3" autoplay="false">
             </a-entity>
         <a-camera-static/>
         </a-marker>
         
-         <a-marker preset='custom' type='pattern' url='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/chef.patt'>
+         <a-marker markerhandler4 emitevents="true" cursor="rayOrigin: mouse" id="mchef" preset='custom' type='pattern' url='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/chef.patt'>
             <a-entity 
                 gltf-model="#chef"
-                scale= '.2 .2 .2' position='0, 0, -1'rotation='-90, 0, 0'>
+                scale= '.2 .2 .2' position='0, 0, -1'rotation='-90, 0, 0' sound="src: #sound4" autoplay="false">
             </a-entity>
         <a-camera-static/>
         </a-marker>
@@ -84,8 +103,100 @@
         
     </a-scene>
 
+<script>
+AFRAME.registerComponent('markerhandler', {
+    tick: function () {
+           var entity = document.querySelector('[sound]');
+         if (document.querySelector('a-marker').object3D.visible == true) {
+            entity.components.sound.playSound();
+        } else {
+        }
+
+     }
+});
+    
+   /* AFRAME.registerComponent('markerhandler1', {
+    tick: function () {
+           var entity = document.querySelector('[sound]');
+         if (document.querySelector('a-marker').object3D.visible == true) {
+            entity.components.sound.playSound();
+        } else {
+        }
+
+     }
+});
+    
+    AFRAME.registerComponent('markerhandler2', {
+    tick: function () {
+           var entity = document.querySelector('[sound]');
+         if (document.querySelector('a-marker').object3D.visible == true) {
+            entity.components.sound.playSound();
+        } else {
+        }
+
+     }
+});
+    
+    AFRAME.registerComponent('markerhandler3', {
+    tick: function () {
+           var entity = document.querySelector('[sound]');
+         if (document.querySelector('a-marker').object3D.visible == true) {
+            entity.components.sound.playSound();
+        } else {
+        }
+
+     }
+});
+    
+    AFRAME.registerComponent('markerhandler4', {
+    tick: function () {
+           var entity = document.querySelector('[sound]');
+         if (document.querySelector('a-marker').object3D.visible == true) {
+            entity.components.sound.playSound();
+        } else {
+        }
+
+     }
+});*/
+</script>
 
 
+<!--<script>
+
+//To avoid playing from start if the marker flickers, not sure if needed, but it might be a failsafe when you have mutiple markers and want to make sure the first finishes before launching the second
+var playing = false;
+
+//HTML5 audio, will need user touch input to start on mobile
+var sound1 = new Audio("Audio/queen.mp3");
+var sound2 = new Audio("Audio/test.mp3");
+var sound3 = new Audio("Audio/test.mp3");
+var sound4 = new Audio("Audio/test.mp3");
+var sound5 = new Audio("Audio/test.mp3");
+
+//Detect end of audio
+sound1.addEventListener("ended", function() {
+	sound1.currentTime = 0;
+	playing = false;
+});
+
+AFRAME.registerComponent('markerhandler', {
+	init: function() {
+		// Set up the tick throttling. Will check if marker is active every 500ms
+		this.tick = AFRAME.utils.throttleTick(this.tick, 500, this);
+	},
+	tick: function(t, dt) {
+		
+		if (document.querySelector("#mqueen").object3D.visible == true && playing == false) {
+			// MARKER IS PRESENT
+			sound1.play();
+			playing = true;
+		} else {
+			// MARKER IS HIDDEN, do nothing (up to you)
+		}
+
+	}
+});
+</script> -->
 
 </body>
 </html>
