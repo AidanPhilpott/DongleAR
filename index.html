@@ -1,5 +1,10 @@
 <!DOCTYPE html>
+<html>
 
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+    
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112746340-3"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -14,19 +19,42 @@
 </script>
 
 
-<script src="https://aframe.io/releases/0.8.0/aframe.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/build/aframe-ar.js"></script>
-
+<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+<script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    
 <body style='margin : 0px; overflow: hidden;'>
 
+ 
+
     <a-scene arjs="debugUIEnabled: false;" embedded arjs='trackingMethod: best;'>
-        <a-gltf-model src="Models/QueenDongledorfblend.gltf"></a-gltf-model>
-        <a-marker-camera patternUrl='Marker/pattern-marker.patt'></a-marker-camera>
-        <a-camera-static />
+        
+        <a-assets>
+            <a-asset-item id="asset1" src="https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Models/QueenDongledorfblend.gltf"></a-asset-item>
+            <a-asset-item id="asset2" src="Models/Farmerdorf.gltf"></a-asset-item>
+            <a-asset-item id="asset3" src="Models/Driverdorf.gltf"></a-asset-item>
+            <a-asset-item id="asset4" src="Models/Chefdorf.gltf"></a-asset-item>
+            <a-asset-item id="asset5" src="Models/Butlerdorf.gltf"></a-asset-item>
+        </a-assets>
+        
+        <a-marker id="animated-marker" preset='hiro'>
+         <!--   type='custom' patternUrl='https://raw.githubusercontent.com/AidanPhilpott/DongleAR/master/Marker/pattern-marker.patt'-->
+        <!--<a-gltf-model src="Models/QueenDongledorfblend.gltf"></a-gltf-model>
+        <a-marker-camera patternUrl='https://aidanphilpott.github.io/DongleAR/Marker/pattern-marker.patt'></a-marker-camera>-->
+            <a-entity 
+                gltf-model="asset1"
+                scale="2">
+            </a-entity>
+    
+            <a-camera-static/>
+        </a-marker>
+        <a-entity camera></a-entity>
     </a-scene>
 
-</body>
 
+
+
+</body>
 </html>
 
 
