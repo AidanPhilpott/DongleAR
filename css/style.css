@@ -1,5 +1,5 @@
 html, body{
-  background-image: url("food.png");
+/*  background-image: url("food.png");*/
   margin: 0;
   padding: 0;
   max-height: 100vh;
@@ -7,46 +7,7 @@ html, body{
   font-family: 'Nunito', sans-serif;
   background-color: #FCFCFC;
 }
-#camera, #camera--view, #camera--sensor, #camera--output{
-    position: fixed;
-    height: 92.5vh;
-    width: 100%;
-    object-fit:cover;
-    display: flex;
-    justify-content: center;
-}
-#camera--view, #camera--sensor, #camera--output{
-    transform: scaleX(-1);
-    filter: FlipH;
-}
-#camera--trigger{
-    background-color: #73A0F9;
-    color: white;
-    font-size: 32px;
-    border-radius: 50px;
-    border: none;
-    padding: 20px 20px;
-    text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    position: fixed;
-    bottom: 100px;
-    justify-content: center;
-    z-index: 10;
-}
 
-#camera--trigger:hover{
-    background-color: #8C7AFF;
-    color: white;
-    font-size: 32px;
-    border-radius: 50px;
-    border: none;
-    padding: 20px 20px;
-    text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    position: fixed;
-    bottom: 100px;
-    justify-content: center;
-    z-index: 10;
 }
 
 .hide{
@@ -60,35 +21,7 @@ html, body{
   justify-content: center;
 }
 
-#cameraView{
-  z-index: 1;
-}
 
-.reveal{
-  display: block;
-  z-index: 10;
-  opacity: 1 !important;
-}
-
-.taken{
-    height: 100%!important;
-    width: 100%!important;
-    transition: all 0.5s ease-in;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    z-index: 2;
-    display: none;
-}
-
-.answer{
-  position: fixed;
-  margin-top: 40%;
-}
-
-#happy{
-    width: 50%;
-    margin-left: 50%;
-    margin-top: -20%;
-}
 
 
 h1{

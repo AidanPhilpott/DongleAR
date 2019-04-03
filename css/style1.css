@@ -1,0 +1,30 @@
+.homebtn {
+    position: absolute;
+    text-align: center;
+    background-color: #73A0F9;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 25px;
+    bottom: 10%;
+    left: 30%;
+    width: 40%;
+    color: white;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+    z-index: 500;
+    cursor: pointer;
+    display: none;
+}
+
+.homebtn:hover {
+    text-align: center;
+    background-color: #8C7AFF;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 25px;
+    color: white;
+    transition: ease-in-out 0.3s;
+}
